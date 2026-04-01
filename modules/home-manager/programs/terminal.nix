@@ -4,9 +4,9 @@
     enable = true;
 
     settings = {
-      font-size = 12;
-      window-padding-y = 4;
-      window-padding-x = 4;
+      font-size = 10;
+      window-padding-y = 8;
+      window-padding-x = 8;
     };
   };
 
