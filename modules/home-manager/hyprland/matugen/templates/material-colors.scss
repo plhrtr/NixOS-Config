@@ -1,0 +1,5 @@
+$transparent: transparent;
+<* for name, value in colors *> 
+  ${{name | replace: "_", "-" }}: #{{value.default.hex_stripped}};
+<* endfor *>
+

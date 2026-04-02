@@ -1,0 +1,33 @@
+.theme-dark {
+    --background-primary: {{colors.surface.dark.hex}};
+    --background-secondary: {{colors.surface.dark.hex}};
+    --color-base-30: {{colors.surface_container.dark.hex}};
+    --color-accent: {{colors.primary_fixed_dim.dark.hex}};
+    --text-on-accent: {{colors.on_primary_fixed.dark.hex}};
+    --color-accent-1: {{colors.tertiary.dark.hex}};
+    --color-accent-2: {{colors.secondary.dark.hex}};
+    --icon-color-focused: {{colors.primary_fixed_dim.dark.hex}};
+    --h1-color: {{colors.primary_fixed_dim.dark.hex}};
+    --h2-color: {{colors.primary_fixed_dim.dark.hex}};
+    --h3-color: {{colors.primary_fixed_dim.dark.hex}};
+    --h4-color: {{colors.primary_fixed_dim.dark.hex}};
+    --italic-color: {{colors.tertiary.dark.hex}};
+    --bold-color: {{colors.primary_fixed_dim.dark.hex}};
+}
+
+.theme-light {
+    --background-primary: {{colors.surface.light.hex}};
+    --background-secondary: {{colors.surface.light.hex}};
+    --color-base-30: {{colors.surface_container.light.hex}};
+    --color-accent: {{colors.primary_fixed_dim.light.hex}};
+    --text-on-accent: {{colors.on_primary_fixed.light.hex}};
+    --color-accent-1: {{colors.tertiary.light.hex}};
+    --color-accent-2: {{colors.secondary.light.hex}};
+    --icon-color-focused: {{colors.primary_fixed_dim.light.hex}};
+    --h1-color: {{colors.primary_fixed_dim.light.hex}};
+    --h2-color: {{colors.primary_fixed_dim.light.hex}};
+    --h3-color: {{colors.primary_fixed_dim.light.hex}};
+    --h4-color: {{colors.primary_fixed_dim.light.hex}};
+    --italic-color: {{colors.tertiary.light.hex}};
+    --bold-color: {{colors.primary_fixed_dim.light.hex}};
+}

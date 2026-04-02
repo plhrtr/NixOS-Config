@@ -1,0 +1,96 @@
+/* ------ */
+/* Widget */ /* ------ */
+.widget {
+  margin: 0;
+  padding: 0;
+}
+
+/* ------ */
+/* Slider */
+/* ------ */
+
+scale {
+  padding: 4px;
+  margin: 0;
+}
+
+scale trough {
+  background: var(--view-bg-color);
+  border-radius: 10px;
+}
+
+scale slider {
+  background: var(--accent-bg-color);
+  border-radius: 10px;
+  outline: 4px solid var(--window-bg-color);
+  margin: 0;
+  outline-offset: 0;
+  min-width: 3px;
+  min-height: 2.3rem;
+}
+
+scale highlight {
+  border-radius: 10px;
+  background: var(--accent-bg-color);
+}
+
+scale highlight:hover {
+  background: var(--accent-bg-hover-color);
+}
+
+/* ------------ */
+/* Progress bar */
+/* ------------ */
+
+progressbar {
+  padding: 7px;
+  padding-top: 0;
+}
+
+progressbar trough {
+  background: var(--view-bg-color);
+}
+
+progressbar progress {
+  background: var(--accent-bg-color);
+}
+
+/* ------ */
+/* Switch */
+/* ------ */
+
+switch {
+  transform: scale(0.9);
+  border: 2px solid var(--border-color);
+  background: var(--popover-bg-color);
+  transition: all;
+  transition-duration: 100ms;
+}
+
+switch:checked {
+  border: 2px solid var(--accent-bg-color);
+  background: var(--accent-bg-color);
+}
+
+switch slider {
+  transition: all;
+  transition-duration: 100ms;
+  background: var(--border-color);
+  padding: 0;
+}
+
+switch:checked slider {
+  background: var(--accent-fg-color);
+  outline: 3px solid var(--accent-fg-color);
+  outline-offset: -1px;
+}
+
+/* ------- */
+/* Tooltip */
+/* ------- */
+
+tooltip {
+  background: var(--popover-bg-color);
+  color: var(--popover-fg-color);
+  border: 1px solid var(--border-color);
+}

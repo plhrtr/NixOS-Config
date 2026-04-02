@@ -55,9 +55,5 @@
   # Shell
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-  };
 
 }

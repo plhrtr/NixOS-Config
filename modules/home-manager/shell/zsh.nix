@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -37,4 +37,10 @@
   home.packages = with pkgs; [
     zsh-powerlevel10k
   ];
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
 }
