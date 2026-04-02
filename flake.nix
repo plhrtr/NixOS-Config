@@ -8,6 +8,10 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    astal.url = "github:aylur/astal";
+
+    ags.url = "github:aylur/ags";
   };
 
   outputs =

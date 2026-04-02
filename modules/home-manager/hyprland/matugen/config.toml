@@ -15,7 +15,10 @@ output_path = '~/.config/gtk-3.0/colors.css'
 input_path = './templates/gtk-colors.css'
 output_path = '~/.config/gtk-4.0/colors.css'
 post_hook = """
-sh -c 'pkill swaync && nohup swaync &>/dev/null &'
+sh -c '
+  pkill swaync && nohup swaync &>/dev/null &
+  ags quit || nohup ags run ~/.config/ags/app.tsx &>/dev/null &
+  '
 """
 
 [templates.obsidian]
@@ -34,6 +37,11 @@ output_path = "~/.config/ghostty/config"
 # [templates.sddm]
 # input_path = './templates/sddm-theme.conf'
 # output_path = '/usr/share/sddm/themes/Candy/theme.conf'
+
+[templates.vicinae]
+input_path = './templates/vicinae.toml'
+output_path = '~/.local/share/vicinae/themes/material.toml'
+post_hook = 'vicinae theme set material'
 
 [templates.hyprland]
 input_path = './templates/hyprland-colors.conf'

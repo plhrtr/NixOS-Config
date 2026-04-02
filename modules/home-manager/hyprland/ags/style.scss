@@ -1,0 +1,81 @@
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+$fg-color: #{"@theme_fg_color"};
+$bg-color: #{"@theme_bg_color"};
+$border-color: #{"@theme_border_color"};
+
+window.Bar {
+  background: transparent;
+  color: $fg-color;
+  font-weight: bold;
+  margin: 0 5px;
+  margin-top: 1px;
+}
+
+popover {
+  margin-bottom: 10px;
+  > contents {
+    background: $bg-color;
+    padding: 4px;
+    border: 2px solid color-mix(in srgb, $fg-color 20%, $bg-color);
+    box-shadow:
+      0 0 12px rgba(0, 0, 0, 0.2),
+      0 6px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+tooltip {
+  background: $bg-color;
+  color: $fg-color;
+  font-weight: normal;
+  border: 2px solid color-mix(in srgb, $fg-color 20%, $bg-color);
+}
+
+button {
+  border-radius: 999px;
+  margin: 1px;
+  padding: 5px 15px;
+
+  background: transparent;
+
+  &:hover {
+    background: color-mix(in srgb, $fg-color 15%, transparent);
+    transition-duration: 200ms;
+  }
+}
+
+box.workspace-container {
+  margin: 0 15px;
+}
+
+button.workspace {
+  all: unset;
+  min-height: 9px;
+  min-width: 9px;
+  border-radius: 6px;
+  transition-duration: 200ms;
+  background: color-mix(in srgb, $fg-color 30%, transparent);
+
+  &:hover {
+    background: color-mix(in srgb, $fg-color 40%, transparent);
+  }
+}
+
+button.focused {
+  min-width: 30px;
+  background: $fg-color;
+  color: $bg-color;
+
+  &:hover {
+    background: $fg-color;
+  }
+}
+
+popover {
+  button {
+    background: transparent;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+}

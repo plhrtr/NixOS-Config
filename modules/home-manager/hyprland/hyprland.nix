@@ -2,9 +2,12 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 {
+  imports = [ inputs.ags.homeManagerModules.default ];
+
   home.file.".config/hypr".source = ./hypr;
   home.file.".config/swaync".source = ./swaync;
   home.file.".config/matugen".source = ./matugen;
@@ -15,6 +18,23 @@
   home.file.".config/scripts/" = {
     source = ./scripts;
     executable = true;
+  };
+
+  programs.ags = {
+    enable = true;
+
+    configDir = ./ags;
+
+    # additional packages and executables to add to gjs's runtime
+    extraPackages = with pkgs; [
+      inputs.astal.packages.${pkgs.system}.tray
+      inputs.astal.packages.${pkgs.system}.hyprland
+      inputs.astal.packages.${pkgs.system}.network
+      inputs.astal.packages.${pkgs.system}.bluetooth
+      inputs.astal.packages.${pkgs.system}.battery
+      inputs.astal.packages.${pkgs.system}.wireplumber
+      fzf
+    ];
   };
 
   home.packages = with pkgs; [
@@ -35,6 +55,8 @@
     brightnessctl
     power-profiles-daemon
     libnotify
+    caffeine-ng
+    udiskie
   ];
 
   home.activation.generateTheme = lib.hm.dag.entryAfter [ "writeBoundary" ] ''

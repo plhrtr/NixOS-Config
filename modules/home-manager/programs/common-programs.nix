@@ -5,9 +5,18 @@
     gnome-clocks
     nautilus
     papers
+    loupe
+    gnome-music
+    showtime
 
     inkscape
     gimp
     obsidian
+    nextcloud-client
+    chromium
+    spotify
+    thunderbird
+
+    nodejs_20
   ];
 }
