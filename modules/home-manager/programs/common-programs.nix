@@ -16,6 +16,7 @@
     chromium
     spotify
     thunderbird
+    discord
 
     nodejs_20
   ];

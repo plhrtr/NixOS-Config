@@ -47,6 +47,7 @@
     killall
     pciutils
     usbutils
+    adw-gtk3
   ];
 
   # Editor

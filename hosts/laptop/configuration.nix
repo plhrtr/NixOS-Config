@@ -23,6 +23,30 @@
   networking.hostName = "paul";
   networking.networkmanager.enable = true;
 
+  # Display Manager
+  services.xserver.displayManager.lightdm = {
+    enable = true;
+    greeters.gtk = {
+      enable = true;
+      theme.name = "adw-gtk3-dark";
+      cursorTheme.package = pkgs.bibata-cursors;
+      cursorTheme.name = "Bibata-Modern-Ice";
+      cursorTheme.size = 14;
+
+      extraConfig = ''
+        background=
+      '';
+    };
+  };
+
+  #Swap
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 16 * 1024; # 16 GiB
+    }
+  ];
+
   # Home manager config
   home-manager = {
     extraSpecialArgs = { inherit inputs; };

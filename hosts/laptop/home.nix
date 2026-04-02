@@ -10,6 +10,7 @@
     ../../modules/home-manager/programs/terminal.nix
     ../../modules/home-manager/hyprland/hyprland.nix
     ../../modules/home-manager/gtk.nix
+    ../../modules/home-manager/electron-wayland.nix
   ];
 
   home.username = "paul";
