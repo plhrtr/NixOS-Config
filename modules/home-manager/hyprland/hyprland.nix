@@ -55,6 +55,7 @@
     power-profiles-daemon
     libnotify
     caffeine-ng
+    pasystray
   ];
 
   services.udiskie = {

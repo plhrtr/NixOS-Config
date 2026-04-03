@@ -48,6 +48,7 @@
     pciutils
     usbutils
     adw-gtk3
+    bibata-cursors
   ];
 
   # Editor

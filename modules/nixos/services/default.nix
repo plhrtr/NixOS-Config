@@ -5,6 +5,7 @@
     ./pipewire.nix
     ./blueman.nix
     ./upower.nix
+    ./tlp.nix
   ];
 
   # USB decives

@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  lib,
   ...
 }:
 
@@ -24,20 +25,23 @@
   networking.networkmanager.enable = true;
 
   # Display Manager
-  services.xserver.displayManager.lightdm = {
+  services.displayManager.gdm = {
     enable = true;
-    greeters.gtk = {
-      enable = true;
-      theme.name = "adw-gtk3-dark";
-      cursorTheme.package = pkgs.bibata-cursors;
-      cursorTheme.name = "Bibata-Modern-Ice";
-      cursorTheme.size = 14;
-
-      extraConfig = ''
-        background=
-      '';
-    };
   };
+
+  programs.dconf.profiles.gdm.databases = [
+    {
+      settings = {
+        "org/gnome/login-screen" = {
+          logo = "";
+        };
+        "org/gnome/desktop/interface" = {
+          cursor-theme = "Bibata-Modern-Ice";
+          cursor-size = lib.gvariant.mkInt32 20;
+        };
+      };
+    }
+  ];
 
   #Swap
   swapDevices = [
