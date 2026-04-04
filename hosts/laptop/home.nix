@@ -11,6 +11,7 @@
     ../../modules/home-manager/hyprland/hyprland.nix
     ../../modules/home-manager/gtk.nix
     ../../modules/home-manager/electron-wayland.nix
+    ../../modules/home-manager/lazyvim/lazyvim.nix
   ];
 
   home.username = "paul";

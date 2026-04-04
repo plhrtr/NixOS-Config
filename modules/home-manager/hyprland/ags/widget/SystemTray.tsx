@@ -3,7 +3,7 @@ import AstalTray from "gi://AstalTray?version=0.1"
 import { createBinding, createState, With } from "gnim"
 
 function SystemTrayItem({ item }: { readonly item: AstalTray.TrayItem }) {
-  const popover = Gtk.PopoverMenu.new_from_model(item.menuModel)
+    const popover = Gtk.PopoverMenu.new_from_model(item.menuModel)
   popover.has_arrow = false
 
   return (
@@ -25,7 +25,7 @@ export default function SystemTray() {
   const tray = AstalTray.get_default()
   const trayItems = createBinding(tray, "items")
 
-  const [icon, setIcon] = createState("go-up-symbolic")
+  const [icon, setIcon] = createState("go-down-symbolic")
 
   return (
     <menubutton class={"system-tray"} tooltip_text={"Open the system tray"}>
@@ -34,7 +34,7 @@ export default function SystemTray() {
         has_arrow={false}
         $={(self) =>
           self.connect("notify::visible", () =>
-            setIcon(self.visible ? "go-down-symbolic" : "go-up-symbolic"),
+            setIcon(self.visible ? "go-up-symbolic" : "go-down-symbolic"),
           )
         }
       >

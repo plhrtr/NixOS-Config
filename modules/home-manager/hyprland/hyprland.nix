@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   lib,
   inputs,
@@ -8,16 +7,53 @@
 {
   imports = [ inputs.ags.homeManagerModules.default ];
 
-  home.file.".config/hypr".source = ./hypr;
-  home.file.".config/swaync".source = ./swaync;
-  home.file.".config/matugen".source = ./matugen;
-  home.file.".config/gtk-3.0/gtk.css".source = ./gtk-3.0/gtk.css;
-  home.file.".config/gtk-4.0/gtk.css".source = ./gtk-4.0/gtk.css;
-  home.file.".config/gtk-4.0/gtk-dark.css".source = ./gtk-4.0/gtk-dark.css;
+  home = {
+    file = {
+      ".config/hypr" = {
+        source = ./hypr;
+        recursive = true;
+      };
 
-  home.file.".config/scripts/" = {
-    source = ./scripts;
-    executable = true;
+      ".config/swaync" = {
+        source = ./swaync;
+        recursive = true;
+      };
+      ".config/matugen" = {
+        source = ./matugen;
+        recursive = true;
+      };
+      ".config/gtk-3.0/gtk.css".source = ./gtk-3.0/gtk.css;
+      ".config/gtk-4.0/gtk.css".source = ./gtk-4.0/gtk.css;
+      ".config/gtk-4.0/gtk-dark.css".source = ./gtk-4.0/gtk-dark.css;
+
+      ".config/scripts/" = {
+        source = ./scripts;
+        executable = true;
+        recursive = true;
+      };
+    };
+
+    packages = with pkgs; [
+      hyprland
+      hyprpaper
+      hyprsunset
+      hyprlock
+      hypridle
+      hyprshot
+      hyprpicker
+      vicinae
+      swaynotificationcenter
+      matugen
+      networkmanagerapplet
+      pamixer
+      playerctl
+      brightnessctl
+      power-profiles-daemon
+      libnotify
+      caffeine-ng
+      pasystray
+      udiskie
+    ];
   };
 
   programs.ags = {
@@ -36,27 +72,6 @@
       fzf
     ];
   };
-
-  home.packages = with pkgs; [
-    hyprland
-    hyprpaper
-    hyprsunset
-    hyprlock
-    hypridle
-    hyprshot
-    hyprpicker
-    vicinae
-    swaynotificationcenter
-    matugen
-    networkmanagerapplet
-    pamixer
-    playerctl
-    brightnessctl
-    power-profiles-daemon
-    libnotify
-    caffeine-ng
-    pasystray
-  ];
 
   services.udiskie = {
     enable = true;

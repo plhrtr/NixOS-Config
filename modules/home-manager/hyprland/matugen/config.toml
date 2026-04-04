@@ -4,7 +4,7 @@ command = ""
 
 [templates.hyprpaper]
 input_path = "./templates/hyprpaper.conf"
-output_path = "~/.config/dynamic-theming/hyprpaper.conf"
+output_path = "~/.config/hypr/hyprpaper.conf"
 post_hook = "pkill hyprpaper && nohup hyprpaper &>/dev/null &"
 
 [templates.gtk3]
@@ -45,5 +45,5 @@ post_hook = 'vicinae theme set material'
 
 [templates.hyprland]
 input_path = './templates/hyprland-colors.conf'
-output_path = '~/.config/dynamic-theming/colors.conf'
+output_path = '~/.config/hypr/themes/colors.conf'
 post_hook = 'hyprctl reload >/dev/null 2>&1'

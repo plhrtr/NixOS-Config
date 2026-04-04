@@ -24,10 +24,10 @@
   networking.hostName = "paul";
   networking.networkmanager.enable = true;
 
+  services.gnome.gnome-keyring.enable = true;
+
   # Display Manager
-  services.displayManager.gdm = {
-    enable = true;
-  };
+  services.displayManager.gdm.enable = true;
 
   programs.dconf.profiles.gdm.databases = [
     {
