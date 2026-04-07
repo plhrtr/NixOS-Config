@@ -8,7 +8,12 @@
     loupe
     gnome-music
     showtime
+    sushi
 
+    # Misc
+    satty # screenshot annotator
+
+    # Apps
     inkscape
     gimp
     obsidian

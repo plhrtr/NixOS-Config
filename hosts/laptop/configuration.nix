@@ -1,6 +1,4 @@
 {
-  config,
-  pkgs,
   inputs,
   lib,
   ...
@@ -17,12 +15,19 @@
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
 
   # Networking
-  networking.hostName = "paul";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "paul";
+    networkmanager.enable = true;
+    firewall = {
+      enable = true;
+    };
+  };
 
   services.gnome.gnome-keyring.enable = true;
 
@@ -86,8 +91,15 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "dialout"
     ];
   };
+
+  # Betaflight
+  services.udev.extraRules = ''
+    # STMicroelectronics STM32 Device in DFU Mode
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", MODE="0666"
+  '';
 
   nixpkgs.config.allowUnfree = true;
 

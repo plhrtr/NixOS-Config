@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-
+{ ... }:
 {
   nixpkgs.config.allowUnfree = true;
 
@@ -14,10 +13,11 @@
     ../../modules/home-manager/lazyvim/lazyvim.nix
   ];
 
-  home.username = "paul";
-  home.homeDirectory = "/home/paul";
-
-  home.stateVersion = "25.11";
+  home = {
+    username = "paul";
+    homeDirectory = "/home/paul";
+    stateVersion = "25.11";
+  };
 
   programs.home-manager.enable = true;
 }

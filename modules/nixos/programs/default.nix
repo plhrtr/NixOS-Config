@@ -20,6 +20,7 @@
     fd
     fzf
     zoxide
+    wl-clipboard
 
     # Shell & utils
     zsh
