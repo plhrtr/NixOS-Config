@@ -32,6 +32,9 @@
 
     history.size = 10000;
 
+    initContent = ''
+      eval "$(direnv hook zsh)"
+    '';
   };
 
   home.packages = with pkgs; [

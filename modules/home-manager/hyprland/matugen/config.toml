@@ -34,10 +34,6 @@ output_path = "~/.config/ghostty/config"
 # output_path = '~/.config/spicetify/Themes/material3/color.ini'
 # post_hook = 'spicetify apply -q -n'
 
-# [templates.sddm]
-# input_path = './templates/sddm-theme.conf'
-# output_path = '/usr/share/sddm/themes/Candy/theme.conf'
-
 [templates.vicinae]
 input_path = './templates/vicinae.toml'
 output_path = '~/.local/share/vicinae/themes/material.toml'
@@ -47,3 +43,16 @@ post_hook = 'vicinae theme set material'
 input_path = './templates/hyprland-colors.conf'
 output_path = '~/.config/hypr/themes/colors.conf'
 post_hook = 'hyprctl reload >/dev/null 2>&1'
+
+[templates.pywalfox]
+input_path = './templates/pywalfox-colors.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
+
+[templates.qt5ct]
+input_path = './templates/qtct-colors.conf'
+output_path = '~/.config/qt5ct/colors/matugen.conf'
+
+[templates.qt6ct]
+input_path = './templates/qtct-colors.conf'
+output_path = '~/.config/qt6ct/colors/matugen.conf'

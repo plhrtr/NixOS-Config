@@ -7,6 +7,7 @@
     ../../modules/home-manager/programs/common-programs.nix
     ../../modules/home-manager/programs/browser.nix
     ../../modules/home-manager/programs/terminal.nix
+    ../../modules/home-manager/programs/tmux.nix
     ../../modules/home-manager/hyprland/hyprland.nix
     ../../modules/home-manager/gtk.nix
     ../../modules/home-manager/electron-wayland.nix

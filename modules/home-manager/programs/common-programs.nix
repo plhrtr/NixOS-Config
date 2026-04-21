@@ -22,5 +22,6 @@
     spotify
     thunderbird
     discord
+    valent
   ];
 }

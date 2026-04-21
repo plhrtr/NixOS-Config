@@ -13,7 +13,6 @@
         source = ./hypr;
         recursive = true;
       };
-
       ".config/swaync" = {
         source = ./swaync;
         recursive = true;
@@ -22,10 +21,22 @@
         source = ./matugen;
         recursive = true;
       };
-      ".config/gtk-3.0/gtk.css".source = ./gtk-3.0/gtk.css;
-      ".config/gtk-4.0/gtk.css".source = ./gtk-4.0/gtk.css;
-      ".config/gtk-4.0/gtk-dark.css".source = ./gtk-4.0/gtk-dark.css;
-
+      ".config/qt5ct" = {
+        source = ./qt5ct;
+        recursive = true;
+      };
+      ".config/qt6ct" = {
+        source = ./qt6ct;
+        recursive = true;
+      };
+      ".config/gtk-3.0" = {
+        source = ./gtk-3.0;
+        recursive = true;
+      };
+      ".config/gtk-4.0" = {
+        source = ./gtk-4.0;
+        recursive = true;
+      };
       ".config/scripts/" = {
         source = ./scripts;
         executable = true;
@@ -53,6 +64,8 @@
       caffeine-ng
       pasystray
       udiskie
+      pywalfox-native
+      pywal
     ];
   };
 
@@ -73,6 +86,11 @@
     ];
   };
 
+  qt = {
+    enable = true;
+    platformTheme.name = "qtct";
+  };
+
   services.udiskie = {
     enable = true;
     settings = {
@@ -85,7 +103,14 @@
     };
   };
 
-  home.activation.generateTheme = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  dconf.settings = {
+    "org/gnome/nm-applet" = {
+      disable-connected-notifications = false;
+      disable-disconnected-notifications = false;
+    };
+  };
+
+  home.activation.generateTheme = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
     ${pkgs.matugen}/bin/matugen image ${toString ./default-wallpaper.jpg}
   '';
 
