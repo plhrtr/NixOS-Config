@@ -30,6 +30,8 @@
     gnumake
     pkg-config
     cmake
+    man-db
+    man-pages
 
     # Debugging / system
     strace

@@ -4,7 +4,6 @@
     # Gnome suite
     gnome-clocks
     nautilus
-    papers
     loupe
     gnome-music
     showtime
@@ -14,12 +13,12 @@
     satty # screenshot annotator
 
     # Apps
+    zathura
     inkscape
     gimp
     obsidian
     nextcloud-client
     chromium
-    spotify
     thunderbird
     discord
     valent
