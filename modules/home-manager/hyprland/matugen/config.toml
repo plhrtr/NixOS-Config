@@ -29,10 +29,9 @@ output_path = '~/Documents/Notizen/.obsidian/themes/Material/theme.css'
 input_path = "./templates/ghostty.conf"
 output_path = "~/.config/ghostty/config"
 
-# [templates.spotify]
-# input_path = './templates/spotify.ini'
-# output_path = '~/.config/spicetify/Themes/material3/color.ini'
-# post_hook = 'spicetify apply -q -n'
+[templates.vscode]
+input_path = './templates/vscode.json'
+output_path = '~/.vscode/extensions/material-3/themes/Material 3-color-theme.json'
 
 [templates.vicinae]
 input_path = './templates/vicinae.toml'

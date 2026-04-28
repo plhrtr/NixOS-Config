@@ -10,6 +10,7 @@
     ../../modules/home-manager/programs/git.nix
     ../../modules/home-manager/programs/tmux.nix
     ../../modules/home-manager/programs/spotify.nix
+    ../../modules/home-manager/programs/code/code.nix
     ../../modules/home-manager/programs/anki.nix
     ../../modules/home-manager/hyprland/hyprland.nix
     ../../modules/home-manager/gtk.nix
