@@ -11,9 +11,9 @@
 
     # Misc
     satty # screenshot annotator
+    steam-run # Run apps in the steam FHS environment
 
     # Apps
-    zathura
     inkscape
     gimp
     obsidian
