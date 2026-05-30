@@ -1,9 +1,8 @@
-{ pkgs, ... }:
+{ ... }:
 {
   # Enable CUPS to print documents.
   services.printing = {
     enable = true;
-    drivers = with pkgs; [ canon-cups-ufr2 ];
   };
 
   # Wifi Printers
