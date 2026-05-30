@@ -121,7 +121,7 @@
   };
 
   home.activation.generateTheme = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
-    ${pkgs.matugen}/bin/matugen image ${toString ./default-wallpaper.jpg}
+    ${pkgs.matugen}/bin/matugen image ${toString ./default-wallpaper.jpg} --source-color-index 0
   '';
 
 }
