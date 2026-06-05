@@ -53,9 +53,6 @@
     bibata-cursors
   ];
 
-  # Editor
-  programs.neovim.defaultEditor = true;
-
   # Shell
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;

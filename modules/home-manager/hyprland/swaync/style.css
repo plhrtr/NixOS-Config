@@ -47,7 +47,7 @@
     0 0 12px rgba(0, 0, 0, 0.2),
     0 6px 8px rgba(0, 0, 0, 0.1);
   color: var(--window-fg-color);
-  background: var(--window-bg-color);
+  background: color-mix(in srgb, var(--window-bg-color) 90%, transparent);
   border-radius: var(--border-radius);
   padding: 6px;
   border: 2px solid var(--border-color);
@@ -170,7 +170,7 @@
 /* ----------------------- */
 
 .widget-dnd {
-  background: var(--view-bg-color);
+  background: color-mix(in srgb, var(--view-bg-color) 90%, transparent);
   border-top-right-radius: calc(var(--border-radius) - 6px);
   border-top-left-radius: calc(var(--border-radius) - 6px);
   border-bottom-right-radius: 0;
@@ -186,7 +186,7 @@
 }
 
 .widget-notifications {
-  background: var(--view-bg-color);
+  background: color-mix(in srgb, var(--view-bg-color) 90%, transparent);
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   border-bottom-right-radius: calc(var(--border-radius) - 6px);
@@ -263,6 +263,7 @@
     0 6px 8px rgba(0, 0, 0, 0.1);
 
   border-radius: var(--border-radius);
+  background: color-mix(in srgb, var(--popover-bg-color) 90%, transparent);
 }
 
 .notification {

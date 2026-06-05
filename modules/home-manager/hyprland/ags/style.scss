@@ -14,7 +14,7 @@ window.Bar {
 popover {
   margin-bottom: 10px;
   > contents {
-    background: $bg-color;
+    background: color-mix(in srgb, $bg-color 90%, transparent);
     padding: 4px;
     border: 2px solid color-mix(in srgb, $fg-color 20%, $bg-color);
     box-shadow:
@@ -24,7 +24,7 @@ popover {
 }
 
 tooltip {
-  background: $bg-color;
+  background: color-mix(in srgb, $bg-color 90%, transparent);
   color: $fg-color;
   font-weight: normal;
   border: 2px solid color-mix(in srgb, $fg-color 20%, $bg-color);

@@ -1,6 +1,7 @@
 {
   inputs,
   lib,
+  pkgs,
   ...
 }:
 
@@ -111,6 +112,9 @@
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", MODE="0666"
   '';
 
+  # Enables udev rules for stm32 development via st-link
+  services.udev.packages = [ pkgs.stlink ];
+
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = [
@@ -125,6 +129,11 @@
   };
 
   services.gvfs.enable = true;
+
+  programs.nautilus-open-any-terminal = {
+    enable = true;
+    terminal = "ghostty";
+  };
 
   system.stateVersion = "25.11";
 }
