@@ -54,15 +54,15 @@
       hyprpicker
       swaynotificationcenter
       matugen
-      networkmanagerapplet
       pamixer
       playerctl
       brightnessctl
       power-profiles-daemon
       libnotify
-      caffeine-ng
       pywalfox-native
       pywal
+      caffeine-ng
+      networkmanagerapplet
     ];
   };
 
@@ -106,8 +106,6 @@
       ];
     };
     blueman-applet.enable = true;
-    network-manager-applet.enable = true;
-    caffeine.enable = true;
     pasystray.enable = true;
   };
 
