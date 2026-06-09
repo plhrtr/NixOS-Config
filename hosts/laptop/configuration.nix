@@ -74,14 +74,41 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
-      "paul" = import ./home.nix;
+      "paul" = {
+        imports = [
+          ./home.nix
+          inputs.vicinae.homeManagerModules.default
+        ];
+
+      };
     };
   };
 
   # Enable the GNOME Desktop Environment.
   # services.xserver.desktopManager.gnome.enable = true;
 
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    config = {
+      common = {
+        default = [ "gtk" ];
+      };
+      hyprland = {
+        default = [
+          "hyprland"
+          "gtk"
+        ];
+      };
+    };
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {

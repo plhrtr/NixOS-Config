@@ -5,7 +5,7 @@ command = ""
 [templates.hyprpaper]
 input_path = "./templates/hyprpaper.conf"
 output_path = "~/.config/hypr/hyprpaper.conf"
-post_hook = "pkill hyprpaper ; nohup hyprpaper &>/dev/null &"
+post_hook = "pkill hyprpaper; uwsm app -- hyprpaper >/dev/null 2>&1 &"
 
 [templates.gtk3]
 input_path = './templates/gtk-colors.css'
@@ -16,9 +16,10 @@ input_path = './templates/gtk-colors.css'
 output_path = '~/.config/gtk-4.0/colors.css'
 post_hook = """
 sh -c '
-  pkill swaync ; nohup swaync &>/dev/null &
-  ags quit ; nohup ags run ~/.config/ags/app.tsx &>/dev/null &
-  '
+  pkill swaync
+  ags quit
+  uwsm app -- ags run ~/.config/ags/app.tsx >/dev/null 2>&1 &
+'
 """
 
 [templates.obsidian]
@@ -36,7 +37,7 @@ output_path = '~/.vscode/extensions/material-3/themes/Material 3-color-theme.jso
 [templates.vicinae]
 input_path = './templates/vicinae.toml'
 output_path = '~/.local/share/vicinae/themes/material.toml'
-post_hook = 'pgrep vicinae >/dev/null ; vicinae theme set material'
+post_hook = 'pgrep vicinae >/dev/null && uwsm app -- vicinae theme set material'
 
 [templates.hyprland]
 input_path = './templates/hyprland-colors.conf'
@@ -46,7 +47,7 @@ post_hook = 'hyprctl reload >/dev/null 2>&1'
 [templates.pywalfox]
 input_path = './templates/pywalfox-colors.json'
 output_path = '~/.cache/wal/colors.json'
-post_hook = 'pywalfox update'
+post_hook = 'uwsm app -- pywalfox update'
 
 [templates.qt5ct]
 input_path = './templates/qtct-colors.conf'

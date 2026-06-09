@@ -9,15 +9,21 @@
     };
     astal.url = "github:aylur/astal";
     ags.url = "github:aylur/ags";
+    vicinae.url = "github:vicinaehq/vicinae";
   };
   outputs =
-    { self, nixpkgs, ... }@inputs:
+    {
+      self,
+      nixpkgs,
+      ...
+    }@inputs:
     {
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/laptop/configuration.nix
+            inputs.vicinae.nixosModules.default
           ];
         };
       };

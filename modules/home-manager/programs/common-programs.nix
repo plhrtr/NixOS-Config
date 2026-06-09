@@ -17,6 +17,7 @@
     # Apps
     inkscape
     gimp
+    darktable
     obsidian
     nextcloud-client
     chromium

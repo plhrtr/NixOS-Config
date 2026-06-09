@@ -52,7 +52,6 @@
       hypridle
       hyprshot
       hyprpicker
-      vicinae
       swaynotificationcenter
       matugen
       networkmanagerapplet
@@ -62,8 +61,6 @@
       power-profiles-daemon
       libnotify
       caffeine-ng
-      pasystray
-      udiskie
       pywalfox-native
       pywal
     ];
@@ -95,10 +92,7 @@
     udiskie = {
       enable = true;
       settings = {
-        # workaround for
-        # https://github.com/nix-community/home-manager/issues/632
         program_options = {
-          # replace with your favorite file manager
           file_manager = "${pkgs.nautilus}/bin/nautilus";
         };
       };
@@ -111,6 +105,10 @@
         "-e"
       ];
     };
+    blueman-applet.enable = true;
+    network-manager-applet.enable = true;
+    caffeine.enable = true;
+    pasystray.enable = true;
   };
 
   dconf.settings = {
@@ -120,8 +118,28 @@
     };
   };
 
+  services.vicinae = {
+    package = pkgs.vicinae;
+    enable = true;
+    systemd = {
+      enable = true;
+      autoStart = true; # default: false
+      environment = {
+        USE_LAYER_SHELL = 1;
+      };
+    };
+  };
+
+  xdg.configFile."uwsm/env".text = ''
+    QT_QPA_PLATFORM="wayland;xcb"
+    QT_QPA_PLATFORMTHEME="qt6ct"
+    QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+    QT_AUTO_SCREEN_SCALE_FACTOR=1
+    MOZ_ENABLE_WAYLAND=1
+    GDK_SCALE=1
+  '';
+
   home.activation.generateTheme = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
     ${pkgs.matugen}/bin/matugen image ${toString ./default-wallpaper.jpg} --source-color-index 0
   '';
-
 }
