@@ -10,6 +10,10 @@
     astal.url = "github:aylur/astal";
     ags.url = "github:aylur/ags";
     vicinae.url = "github:vicinaehq/vicinae";
+    vicinae-extensions = {
+      url = "github:vicinaehq/extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
