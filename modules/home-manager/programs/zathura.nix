@@ -1,9 +1,5 @@
-{ ... }:
+{ pkgs, ... }:
 {
-  programs.zathura = {
-    enable = true;
-    options = {
-      selection-clipboard = "clipboard";
-    };
-  };
+  home.packages = [ pkgs.zathura ];
+  # Config managed by matugen template
 }

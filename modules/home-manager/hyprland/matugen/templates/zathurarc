@@ -1,0 +1,60 @@
+" -----------------------------------------------------------------------------
+" Zathura settings
+" -----------------------------------------------------------------------------
+
+" Colors
+set notification-error-bg       "{{colors.error.default.hex}}"
+set notification-error-fg       "{{colors.on_error.default.hex}}"
+set notification-warning-bg     "{{colors.tertiary_container.default.hex}}"
+set notification-warning-fg     "{{colors.on_tertiary_container.default.hex}}"
+set notification-bg             "{{colors.surface_container.default.hex}}"
+set notification-fg             "{{colors.on_surface.default.hex}}"
+
+set completion-bg               "{{colors.surface_container.default.hex}}"
+set completion-fg               "{{colors.on_surface_variant.default.hex}}"
+set completion-group-bg         "{{colors.surface_container.default.hex}}"
+set completion-group-fg         "{{colors.on_surface_variant.default.hex}}"
+set completion-highlight-bg     "{{colors.primary_container.default.hex}}"
+set completion-highlight-fg     "{{colors.on_primary_container.default.hex}}"
+
+set index-bg                    "{{colors.surface.default.hex}}"
+set index-fg                    "{{colors.on_surface.default.hex}}"
+set index-active-bg             "{{colors.primary_container.default.hex}}"
+set index-active-fg             "{{colors.on_primary_container.default.hex}}"
+
+set inputbar-bg                 "{{colors.surface_container_high.default.hex}}"
+set inputbar-fg                 "{{colors.on_surface.default.hex}}"
+set statusbar-bg                "{{colors.surface_container_high.default.hex}}"
+set statusbar-fg                "{{colors.on_surface.default.hex}}"
+
+# Transparency handling for highlights using 8-digit hex (80 = 50% opacity)
+set highlight-color             "{{colors.tertiary.default.hex}}80"
+set highlight-active-color      "{{colors.primary_fixed_dim.default.hex}}80"
+
+set default-bg                  "{{colors.surface.default.rgba | set_alpha: 1.0}}"
+set default-fg                  "{{colors.on_surface.default.hex}}"
+
+set render-loading              true
+set render-loading-fg           "{{colors.surface.default.hex}}"
+set render-loading-bg           "{{colors.on_surface.default.hex}}"
+
+
+" Clipboard
+set selection-clipboard clipboard
+
+" Search
+set incremental-search true
+set search-hadjust true
+
+" Autoadjust
+set adjust-open width
+
+" Typography
+set font "JetBrainsMono Nerd Font 10"
+
+" -----------------------------------------------------------------------------
+" Zathura mappings
+" -----------------------------------------------------------------------------
+
+" remove status bar
+set guioptions none
