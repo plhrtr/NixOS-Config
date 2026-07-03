@@ -10,7 +10,7 @@
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-code
 
-    # Good programming fonts
+    # programming fonts
     jetbrains-mono
     fira-code
 

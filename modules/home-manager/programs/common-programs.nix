@@ -19,7 +19,6 @@
     gimp
     darktable
     obsidian
-    nextcloud-client
     chromium
     thunderbird
     discord

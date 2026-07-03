@@ -39,6 +39,8 @@
 
   home.packages = with pkgs; [
     zsh-powerlevel10k
+    eza
+    bat
   ];
 
   programs.zoxide = {

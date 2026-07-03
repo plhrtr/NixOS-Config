@@ -14,12 +14,9 @@
     unzip
     zip
     gnupg
-    eza
-    bat
     ripgrep
     fd
     fzf
-    zoxide
     wl-clipboard
 
     # Shell & utils
@@ -60,7 +57,7 @@
   # Direnv
   programs.direnv = {
     enable = true;
-    enableZshIntegration = true; # see note on other shells below
+    enableZshIntegration = true;
     nix-direnv.enable = true;
   };
 

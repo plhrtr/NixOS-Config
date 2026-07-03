@@ -13,10 +13,12 @@
     ../../modules/home-manager/programs/code/code.nix
     ../../modules/home-manager/programs/anki.nix
     ../../modules/home-manager/programs/zathura.nix
+    ../../modules/home-manager/programs/nextcloud-client.nix
     ../../modules/home-manager/hyprland/hyprland.nix
     ../../modules/home-manager/gtk.nix
     ../../modules/home-manager/electron-wayland.nix
     ../../modules/home-manager/lazyvim/lazyvim.nix
+    ../../modules/home-manager/vicinae.nix
   ];
 
   home = {
