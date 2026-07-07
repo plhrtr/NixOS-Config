@@ -67,6 +67,10 @@
 
       devShells.${system} = {
         default = pkgs.mkShell {
+          packages = with pkgs; [
+            vtsls
+          ];
+
           buildInputs = [
             (ags.packages.${system}.default.override {
               inherit extraPackages;
