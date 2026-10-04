@@ -52,7 +52,7 @@
 
       set -g status-left "#[bg=#{@thm_primary},fg=#{@thm_bg},bold] #S #[bg=#{@thm_bg},fg=#{@thm_primary}] "
 
-      set -g status-right "#[fg=#{@thm_text_variant},bg=#{@thm_surface_low}] %Y-%m-%d │ %H:%M #[fg=#{@thm_bg},bg=#{@thm_primary},bold] #h "
+      set -g status-right "#[fg=#{@thm_text_variant},bg=#{@thm_surface}] %Y-%m-%d │ %H:%M #[fg=#{@thm_bg},bg=#{@thm_primary},bold] #h "
 
       set -g window-status-format "#[fg=#{@thm_text_variant},bg=#{@thm_surface}] #I:#W "
       set -g window-status-separator " "

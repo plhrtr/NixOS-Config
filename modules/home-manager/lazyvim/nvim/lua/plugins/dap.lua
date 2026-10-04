@@ -3,20 +3,14 @@ return {
   optional = true,
   opts = function()
     local dap = require("dap")
-    if not dap.adapters["pwa-chrome"] then
-      dap.adapters["pwa-chrome"] = {
-        type = "server",
-        host = "localhost",
-        port = "${port}",
-        executable = {
-          command = "node",
-          args = {
-            require("mason-registry").get_package("js-debug-adapter"):get_install_path()
-            .. "/js-debug/src/dapDebugServer.js",
-            "${port}",
-          },
-        },
-      }
-    end
+    dap.adapters["codelldb"] = {
+      type = "server",
+      host = "127.0.0.1",
+      port = "${port}",
+      executable = {
+        command = vim.env.CODELLDB_PATH,
+        args = { "--port", "${port}", "--liblldb", vim.env.LIBLLDB_PATH },
+      },
+    }
   end,
 }

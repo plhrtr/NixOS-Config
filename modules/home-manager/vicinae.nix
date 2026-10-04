@@ -1,6 +1,5 @@
 { pkgs, inputs, ... }: {
-  services.vicinae = {
-    package = pkgs.vicinae;
+  programs.vicinae = {
     enable = true;
     systemd = {
       enable = true;
@@ -31,7 +30,7 @@
         hyprland-monitors
         nix
         wifi-commander
-        bluetooth
+        # bluetooth
       ];
 
       providers = {

@@ -252,8 +252,8 @@
 
 /* Position of floating notifications  */
 .floating-notifications .notification-background {
-  padding-right: 14px;
-  padding-top: 14px;
+  padding-right: 4px;
+  padding-top: 4px;
 }
 
 /* Different design of notifications only to floating notifications  */

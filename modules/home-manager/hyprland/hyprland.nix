@@ -7,45 +7,57 @@
 {
   imports = [ inputs.ags.homeManagerModules.default ];
 
+  wayland.windowManager.hyprland = {
+    enable = true;
+    configType = "hyprlang";
+  };
+
   home = {
     file = {
       ".config/hypr" = {
         source = ./hypr;
         recursive = true;
+        force = true;
       };
       ".config/swaync" = {
         source = ./swaync;
         recursive = true;
+        force = true;
       };
       ".config/matugen" = {
         source = ./matugen;
         recursive = true;
+        force = true;
       };
       ".config/qt5ct" = {
         source = ./qt5ct;
         recursive = true;
+        force = true;
       };
       ".config/qt6ct" = {
         source = ./qt6ct;
         recursive = true;
+        force = true;
       };
       ".config/gtk-3.0" = {
         source = ./gtk-3.0;
         recursive = true;
+        force = true;
       };
       ".config/gtk-4.0" = {
         source = ./gtk-4.0;
         recursive = true;
+        force = true;
       };
       ".config/scripts/" = {
         source = ./scripts;
         executable = true;
         recursive = true;
+        force = true;
       };
     };
 
     packages = with pkgs; [
-      hyprland
       hyprpaper
       hyprsunset
       hyprlock

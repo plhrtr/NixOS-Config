@@ -10,6 +10,7 @@
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
     ../../modules/nixos/programs/default.nix
+    ../../modules/nixos/programs/ausweisapp.nix
     ../../modules/nixos/services/default.nix
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/internationalization.nix
