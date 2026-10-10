@@ -1,0 +1,54 @@
+{
+  inputs,
+  ...
+}:
+
+{
+  imports = [
+    inputs.home-manager.nixosModules.default
+    ../../modules/nixos/programs/default.nix
+    ../../modules/nixos/services/default.nix
+    ../../modules/nixos/fonts.nix
+    ../../modules/nixos/internationalization.nix
+  ];
+
+  users.users.paul = {
+    isNormalUser = true;
+    uid = 1000;
+    description = "Paul";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "dialout"
+      "plugdev"
+    ];
+  };
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "paul" = {
+        imports = [
+          ./home.nix
+        ];
+
+      };
+    };
+  };
+
+  wsl.enable = true;
+  wsl.defaultUser = "paul";
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It's perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "26.05"; # Did you read the comment?
+}

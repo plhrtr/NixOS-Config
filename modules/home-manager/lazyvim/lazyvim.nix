@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  config,
+  ...
+}:
 {
   programs.neovim = {
     defaultEditor = true;
@@ -13,4 +17,6 @@
     lua-language-server
     nil
   ];
+
+  xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink ./nvim;
 }
