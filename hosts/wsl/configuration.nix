@@ -7,8 +7,6 @@
   imports = [
     inputs.home-manager.nixosModules.default
     ../../modules/nixos/programs/default.nix
-    ../../modules/nixos/services/default.nix
-    ../../modules/nixos/fonts.nix
     ../../modules/nixos/internationalization.nix
   ];
 
@@ -22,6 +20,14 @@
       "dialout"
       "plugdev"
     ];
+  };
+
+  networking = {
+    hostName = "paul";
+    networkmanager.enable = true;
+    firewall = {
+      enable = true;
+    };
   };
 
   home-manager = {

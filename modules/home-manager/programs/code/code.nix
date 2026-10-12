@@ -27,15 +27,6 @@
           "<C-f>" = false;
           "<C-k>" = false;
         };
-        "vim.insertModeKeyBindings" = [
-          {
-            "before" = [
-              "j"
-              "k"
-            ];
-            "after" = [ "<Esc>" ];
-          }
-        ];
       };
     };
   };
