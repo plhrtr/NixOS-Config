@@ -37,14 +37,14 @@
             inputs.vicinae.nixosModules.default
           ];
         };
-	wsl = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-	specialArgs = { inherit inputs; };
-        modules = [
-          inputs.nixos-wsl.nixosModules.default
-          ./hosts/wsl/configuration.nix
-        ];
-      };
+        wsl = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            inputs.nixos-wsl.nixosModules.default
+            ./hosts/wsl/configuration.nix
+          ];
+        };
       };
     };
 }
